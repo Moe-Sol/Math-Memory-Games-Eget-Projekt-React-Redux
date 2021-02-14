@@ -1,0 +1,45 @@
+.memory-cards {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+}
+
+.memory-card {
+  width: 200px;
+  height: 200px;
+  background: #692D55;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  box-shadow: 2px 2px 5px #000000;
+  position: relative;
+  transition: transform 0.8s;
+  margin: 0.5rem;
+}
+
+.front, .back {
+  position: absolute;
+  backface-visibility: hidden;
+  font-size: 1.5em;
+  padding: 40%;
+  cursor: pointer;
+   transition: transform 0.8s;
+  
+}
+
+.flip {
+  transform: rotateY(180deg);
+
+}
+
+.front {
+
+}
+
+.back {
+
+}
