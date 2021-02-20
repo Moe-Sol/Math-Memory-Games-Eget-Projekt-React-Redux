@@ -2,7 +2,7 @@
 import allCardsInTheGame from './cardsFactory';
 
 
-console.log(allCardsInTheGame)
+// console.log(allCardsInTheGame)
 
 const initialState = {
     allCards: allCardsInTheGame,

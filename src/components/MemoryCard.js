@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { choosedCard} from '../actions/action'
+import { choosedCard } from '../actions/action'
 import React from 'react'
 
 
@@ -23,14 +23,16 @@ function MemoryCard(props) {
         let allSpan = document.querySelectorAll('span')
         if (stateFirstReducer.choosedCardsId.indexOf(props.id) === -1) {
             if (stateFirstReducer.choosedCardsId.length < 2) {
-                dispatch(choosedCard(props.id, props.allCard))
+                console.log(typeof props.allCard)
+                console.log(eval(props.allCard))
+                dispatch(choosedCard(props.id, eval(props.allCard)))
                 allSpan[props.id * 2].className = 'front';
                 allSpan[(props.id * 2) + 1].className = 'back flip';
             }
         }
     }
 
-  
+
 
 
     return (
