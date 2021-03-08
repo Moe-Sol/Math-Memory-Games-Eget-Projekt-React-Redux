@@ -1,5 +1,6 @@
 
 import allCardsInTheGame from './cardsFactory';
+import {arrayForResults,arrayForMultiFactors} from './cardsFactory';
 
 
 // console.log(allCardsInTheGame)

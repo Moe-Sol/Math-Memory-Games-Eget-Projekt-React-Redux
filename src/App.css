@@ -6,10 +6,25 @@
   justify-content: center;
 }
 
-.memory-card {
-  width: 200px;
-  height: 200px;
+.class-Formulas {
+
+  background: #692d558c;
+}
+
+
+.class-Results{
   background: #692D55;
+
+  
+}
+.allCardsContainer{
+
+display: flex;
+
+}
+.memory-card {
+  width: 100px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,9 +40,10 @@
   position: absolute;
   backface-visibility: hidden;
   font-size: 1.5em;
-  padding: 40%;
+  /* padding: 10%; */
   cursor: pointer;
    transition: transform 0.8s;
+   /* background-color: bisque; */
   
 }
 

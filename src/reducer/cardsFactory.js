@@ -2,64 +2,110 @@
 
 
 
-let multiplicationFactor = 2;
-let numberOfSimilarPairs = 6
+let reverseOperatorFun = (operator)=> {
+    
+    if ( operator ==='+') return '-'
+    if ( operator ==='-') return '+'
+    if ( operator ==='*') return '/'
+    if ( operator ==='/') return '*'
+    // else return 0
+
+}
+
+
+
+
+
+let operator = '*';
+
+let reverseOperator = reverseOperatorFun(operator)
+
+console.log(reverseOperator)
+
+
+
+
+
+/* العدد الذي سيتم الضرب به كمثال جدول الخمسة */
+let multiplicationFactor = 5;  
+ /* عدد البطاقات الفريدة ، نضربه ب 2 لنحصل على عدد  جميع الاوراق */
+let numberOfSimilarPairs = 10  
+
+/* الفانكشن التي تقوم بالترتيب تلقائي لاي مصفوفة */
+let shuffle = (array) => array.sort(() => Math.random() - 0.5);
 
 // ---------------------------------------------------------------
-let bildArrayForProduct = (numberOfCards) => {
+let bildArrayForResults = (numberOfCards) => {
 
-    let arrayForProduct = [];
-    while (arrayForProduct.length < numberOfCards) {
+    let arrayForResults = [];
+    while (arrayForResults.length < numberOfCards) {
         let randomNum = Math.ceil(Math.random() * 10);
         // console.log('randomNum', randomNum)
-        let product = multiplicationFactor * randomNum
-        if (arrayForProduct.indexOf(product) === -1 && randomNum !== 0) {
+        // let product = multiplicationFactor * randomNum
+        let product = eval(`${multiplicationFactor}${operator} ${randomNum}`)
+
+        if (arrayForResults.indexOf(product) === -1 && randomNum !== 0) {
             // console.log('the number ', randomNum)
             // console.log('the number * multiplicationFactor', product)
-            arrayForProduct.push(product)
+            arrayForResults.push(product)
         }
 
     }
 
-    return arrayForProduct
+    return arrayForResults
 
 }
 
 
-let arrayForProduct = bildArrayForProduct(numberOfSimilarPairs)
-console.log('arrayForProduct', arrayForProduct)
+let arrayForResults = bildArrayForResults(numberOfSimilarPairs)
+console.log('arrayForResults', arrayForResults)
 
 
-let bildArrayForMultiFactors = () => {
-    // console.log(arrayForProduct)
-    let arrayForMultiFactors = [];
-    for (let i = 0; i < arrayForProduct.length; i++) {
-        // console.log(arrayForProduct[i])
-        arrayForMultiFactors.push(`${arrayForProduct[i] / 2}*${multiplicationFactor}`)
+let bildArrayForFormulas = () => {
+    // console.log(arrayForResults)
+    let arrayForFormulas = [];
+    for (let i = 0; i < arrayForResults.length; i++) {
+        // console.log(arrayForResults[i])
+        arrayForFormulas.push(` ${ eval( `${arrayForResults[i]} ${reverseOperator} ${multiplicationFactor}`)}${operator}${multiplicationFactor}`)
     }
-    return arrayForMultiFactors
+    return arrayForFormulas
 }
 
 
-let arrayForMultiFactors = bildArrayForMultiFactors()
-console.log('arrayForMultiFactors ', arrayForMultiFactors)
+let arrayForFormulas = bildArrayForFormulas()
+shuffle(arrayForFormulas )
+console.log('arrayForFormulas  ', arrayForFormulas)
 
+let allCardsInTheGame = arrayForResults.concat(arrayForFormulas);
 
-
-let allCardsInTheGame = arrayForProduct.concat(arrayForMultiFactors);
-
-let shuffle = (array) => array.sort(() => Math.random() - 0.5);
-
-shuffle(allCardsInTheGame)
 
 
 console.log(allCardsInTheGame)
 
-
+// arrayForResults
 
 // let allCardsInTheGame = [1, 2, 3, 4, 5, 6]
 
 export default allCardsInTheGame
+
+// export { arrayForResults, arrayForFormulas }
+
+
+
+
+
+/*  */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -69,24 +115,25 @@ export default allCardsInTheGame
 // لكن علينا القيام بالجزء الثاني  الذي يشكل ارقام عوامل الضرب بالطريقة الثانية عن طريق فور لوب للمجموعة الاولى بحيث نضمن اننا سنحص ل على نفس الارقام الاولى
 
 
+
 // ---------------------------------------------------------------
 // الحل الثالث 
 /* هذه تقوم باعداد بانشاء مصفوفة مؤلفة من عوامل ضرب عدد معين حتى الرقم المختار للكروت */
 // لم تنفع لاننا نحتاح نفس قيم الكروت المنشأة لمصفوفة ناتج الضرب او العملية الحسابية ولا يمكن الحصول على قيم راندوم هنا 
-// let bildArrayForMultiFactors = (numberOfCards) => {
-//     let arrayForMultiFactors = [];
-//     while (arrayForMultiFactors.length < numberOfCards) {
+// let bildarrayForFormulas  = (numberOfCards) => {
+//     let arrayForFormulas  = [];
+//     while (arrayForFormulas .length < numberOfCards) {
 //         let randomNum = Math.ceil(Math.random() * numberOfCards);
 //         let multiFactors = `${randomNum}*${multiplicationFactor}`
-//         if (arrayForMultiFactors.indexOf(multiFactors) === -1 && randomNum !== 0) {
-//             arrayForMultiFactors.push(multiFactors)
+//         if (arrayForFormulas .indexOf(multiFactors) === -1 && randomNum !== 0) {
+//             arrayForFormulas .push(multiFactors)
 //         }
-//     } return arrayForMultiFactors
+//     } return arrayForFormulas 
 // }
 
 
-// let arrayForMultiFactors = bildArrayForMultiFactors(numberOfSimilarPairs)
-// console.log('arrayForMultiFactors ',arrayForMultiFactors)
+// let arrayForFormulas  = bildarrayForFormulas (numberOfSimilarPairs)
+// console.log('arrayForFormulas  ',arrayForFormulas )
 // ---------------------------------------------------------------
 
 
@@ -98,42 +145,42 @@ let numberOfSimilarPairs = 3
 
 
 
-let bildArrayForProduct = (numberOfCards) => {
+let bildarrayForResults = (numberOfCards) => {
 
-    let arrayForProduct = [];
-    while (arrayForProduct.length < numberOfCards) {
+    let arrayForResults = [];
+    while (arrayForResults.length < numberOfCards) {
         let randomNum = Math.ceil(Math.random() * numberOfCards);
         let product = multiplicationFactor * randomNum
-        if (arrayForProduct.indexOf(product) === -1 && randomNum !== 0) {
+        if (arrayForResults.indexOf(product) === -1 && randomNum !== 0) {
             console.log('the number ', randomNum)
             console.log('the number * multiplicationFactor', product)
-            arrayForProduct.push(product)
+            arrayForResults.push(product)
         }
 
     }
 
-    return arrayForProduct
+    return arrayForResults
 
 }
 
 
-let ArrayForProduct= bildArrayForProduct(numberOfSimilarPairs)
-console.log( ArrayForProduct)
+let arrayForResults= bildarrayForResults(numberOfSimilarPairs)
+console.log( arrayForResults)
 
 
-let bildArrayForMultiFactors = () => {
+let bildarrayForFormulas  = () => {
 
-    let arrayForMultiFactors = [];
-    for (let i = 0; i < ArrayForProduct.length; i++) {
-        console.log(ArrayForProduct[i])
-        arrayForMultiFactors.push(`${ArrayForProduct[i]/2}*${multiplicationFactor}`)
+    let arrayForFormulas  = [];
+    for (let i = 0; i < arrayForResults.length; i++) {
+        console.log(arrayForResults[i])
+        arrayForFormulas .push(`${arrayForResults[i]/2}*${multiplicationFactor}`)
     }
-    return arrayForMultiFactors
+    return arrayForFormulas
 }
 
 
-let arrayForMultiFactors = bildArrayForMultiFactors()
-console.log( arrayForMultiFactors)
+let arrayForFormulas  = bildarrayForFormulas ()
+console.log( arrayForFormulas )
  */
 
 
