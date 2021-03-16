@@ -1,0 +1,84 @@
+@import "../variables.scss";
+
+.startContainer {
+    // background-color: rgb(21, 22, 22);
+    width: 100%;
+   min-height: 100vh;
+
+    background-color: $background-color;
+
+    header {
+        @include header;
+    }
+
+    main {
+        padding-top: 100px;
+        padding-bottom: 50px;
+
+        section {
+            color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            // align-content: center;
+            // align-items: center;
+            // align-self: center;
+            // justify-self: center;
+            // justify-content: center;
+            .plusSignContainer:hover::before {
+                color: $plus-box;
+                font-size: 24px;
+                text-shadow: $text-shadow;
+            }
+            .plusSignContainer::before {
+                @include start-box-before;
+            }
+            .plusSignContainer {
+                @include start-box;
+                background-color: $plus-box;
+                justify-self: right;
+            }
+
+            .minusSignContainer:hover::before {
+                color: $minus-box;
+                font-size: 24px;
+                text-shadow: $text-shadow;
+            }
+
+            .minusSignContainer::before {
+                @include start-box-before;
+            }
+            .minusSignContainer {
+                @include start-box;
+                background-color: $minus-box;
+                justify-self: left;
+            }
+
+            .multiplicationSignContainer {
+                @include start-box;
+                background-color: $multiplication-box;
+                justify-self: right;
+            }
+
+            .divisionSignContainer:hover::before {
+                color: #48887a;
+                font-size: 24px;
+                text-shadow: $text-shadow;
+            }
+
+            .divisionSignContainer::before {
+                @include start-box-before;
+            }
+            .divisionSignContainer {
+                @include start-box;
+                background-color: #48887a;
+                justify-self: left;
+            }
+
+            margin-bottom: 50px;
+        }
+        div {
+            @include guid-text;
+        }
+    }
+}

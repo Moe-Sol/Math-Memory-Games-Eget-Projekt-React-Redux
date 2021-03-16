@@ -1,0 +1,73 @@
+@import "../variables.scss";
+
+.container {
+    width: 100%;
+    height: 90%;
+    // background-color: aquamarine;
+    z-index: 30;
+    // padding: 4.8rem 1rem 1rem 1rem;
+    position: absolute;
+    // background: rgba(10, 9, 26, 0.7);
+    // top: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin-top: -100px;
+
+
+    .StorageDataContainer {
+        width: 70%;
+        background: $background-color;
+        border: solid 1px black;
+        color: #b68500;
+        font-size: 20px;
+        border: 3px solid black;
+
+        // border-radius: 10px;
+
+        div {
+            display: flex;
+            // background-color: whitesmoke;
+            justify-content: flex-end;
+            svg {
+                width: 40px;
+            }
+        }
+
+        h2:first-of-type {
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: -1px 0 rgb(167, 160, 160), 0 1px white, 1px 0 white, 0 -1px white;
+            color: #DB5461;
+            font-size: 24px;
+
+        }
+
+        h2:last-of-type {
+            font-size: 24px;
+            color: #DB5461;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: -1px 0 rgb(167, 160, 160), 0 1px white, 1px 0 white, 0 -1px white;
+        }
+
+        a {
+         
+
+            text-align: center;
+            color: #DB5461;
+            font-weight: 600;
+            font-size: 20px;
+            text-shadow: -1px 0 rgb(167, 160, 160), 0 1px white, 1px 0 white, 0 -1px white;
+        }
+
+        @include buttonsWrapper;
+
+        button {
+            margin: 25px 50px;
+            
+        }
+    }
+}

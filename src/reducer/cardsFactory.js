@@ -1,92 +1,102 @@
 
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router';
+import { useSelector, useDispatch } from 'react-redux'
+import { allCards } from '../actions/action';
+
+function CardsFactory() {
+
+
+    const history = useHistory();
+    const dispatch = useDispatch()
+
+    // const { id } = useParams()
+    // console.log(id + 'id from factory')
+
+    const MultiplicationNumber = useSelector(state => {
+        return state.firstReducer.MultiplicationNumber;
+    })
+
+    let reverseOperatorFun = (operator) => {
+        if (operator === '+') return '-'
+        if (operator === '-') return '+'
+        if (operator === '*') return '/'
+        if (operator === '/') return '*'
+        // else return 0
+    }
+
+    let operator = '*';
+    let reverseOperator = reverseOperatorFun(operator)
+    let shuffle = (array) => array.sort(() => Math.random() - 0.5);
 
 
 
-let reverseOperatorFun = (operator)=> {
+
+    let multiplicationFactor = MultiplicationNumber;
+    let numberOfSimilarPairs = 12
+
+
+    // ---------------------------------------------------------------
+    let bildArrayForResults = (numberOfCards) => {
+        let arrayForResults = [];
+        while (arrayForResults.length < numberOfCards) {
+            let randomNum = Math.ceil(Math.random() * numberOfSimilarPairs);
     
-    if ( operator ==='+') return '-'
-    if ( operator ==='-') return '+'
-    if ( operator ==='*') return '/'
-    if ( operator ==='/') return '*'
-    // else return 0
+            let product = eval(`${multiplicationFactor}${operator} ${randomNum}`)
 
-}
-
-
-
-
-
-let operator = '*';
-
-let reverseOperator = reverseOperatorFun(operator)
-
-console.log(reverseOperator)
-
-
-
-
-
-/* العدد الذي سيتم الضرب به كمثال جدول الخمسة */
-let multiplicationFactor = 5;  
- /* عدد البطاقات الفريدة ، نضربه ب 2 لنحصل على عدد  جميع الاوراق */
-let numberOfSimilarPairs = 10  
-
-/* الفانكشن التي تقوم بالترتيب تلقائي لاي مصفوفة */
-let shuffle = (array) => array.sort(() => Math.random() - 0.5);
-
-// ---------------------------------------------------------------
-let bildArrayForResults = (numberOfCards) => {
-
-    let arrayForResults = [];
-    while (arrayForResults.length < numberOfCards) {
-        let randomNum = Math.ceil(Math.random() * 10);
-        // console.log('randomNum', randomNum)
-        // let product = multiplicationFactor * randomNum
-        let product = eval(`${multiplicationFactor}${operator} ${randomNum}`)
-
-        if (arrayForResults.indexOf(product) === -1 && randomNum !== 0) {
-            // console.log('the number ', randomNum)
-            // console.log('the number * multiplicationFactor', product)
-            arrayForResults.push(product)
+            if (arrayForResults.indexOf(product) === -1 && randomNum !== 0) {
+         
+                arrayForResults.push(product)
+            }
         }
-
+        return arrayForResults
     }
 
-    return arrayForResults
 
-}
-
-
-let arrayForResults = bildArrayForResults(numberOfSimilarPairs)
-console.log('arrayForResults', arrayForResults)
+    let arrayForResults = bildArrayForResults(numberOfSimilarPairs)
 
 
-let bildArrayForFormulas = () => {
-    // console.log(arrayForResults)
-    let arrayForFormulas = [];
-    for (let i = 0; i < arrayForResults.length; i++) {
-        // console.log(arrayForResults[i])
-        arrayForFormulas.push(` ${ eval( `${arrayForResults[i]} ${reverseOperator} ${multiplicationFactor}`)}${operator}${multiplicationFactor}`)
+    let bildArrayForFormulas = () => {
+        let arrayForFormulas = [];
+        for (let i = 0; i < arrayForResults.length; i++) {
+            arrayForFormulas.push(`${eval(`${arrayForResults[i]}${reverseOperator}${multiplicationFactor}`)} X ${multiplicationFactor}`)
+        }
+        return arrayForFormulas
     }
-    return arrayForFormulas
+
+
+    let arrayForFormulas = bildArrayForFormulas();
+
+      shuffle(arrayForFormulas)
+
+    let allCardsInTheGame = arrayForResults.concat(arrayForFormulas);
+
+    dispatch(allCards(allCardsInTheGame.reverse()))
+
+
+    useEffect(()=>{
+        history.push(`/multiplication/${MultiplicationNumber}-times-table`)
+    }, [])
+
+
+
+    return (
+        <div>
+
+        </div>
+    );
 }
 
-
-let arrayForFormulas = bildArrayForFormulas()
-shuffle(arrayForFormulas )
-console.log('arrayForFormulas  ', arrayForFormulas)
-
-let allCardsInTheGame = arrayForResults.concat(arrayForFormulas);
+export default CardsFactory;
 
 
 
-console.log(allCardsInTheGame)
 
 // arrayForResults
 
 // let allCardsInTheGame = [1, 2, 3, 4, 5, 6]
 
-export default allCardsInTheGame
+// export default allCardsInTheGame
 
 // export { arrayForResults, arrayForFormulas }
 

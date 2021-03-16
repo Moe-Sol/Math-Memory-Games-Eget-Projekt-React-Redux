@@ -1,0 +1,99 @@
+@import "../variables.scss";
+
+.container {
+    width: 100%;
+    height: 100%;
+    // background-color: aquamarine;
+    // padding: 4.8rem 1rem 1rem 1rem;
+    position: absolute;
+    background: rgba(10, 9, 26, 0.7);
+    // top: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    top: 0;
+    z-index: 302;
+    .StorageDataContainer {
+        width: 50%;
+        background: $background-color;
+        border: solid 1px black;
+        color: #b68500;
+     
+
+        font-size: 20px;
+
+        // border-radius: 10px;
+
+        div {
+            display: flex;
+            // background-color: whitesmoke;
+            justify-content: flex-end;
+            svg {
+                width: 40px;
+            }
+        }
+
+        h2:first-of-type {
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: -1px 0 rgb(167, 160, 160), 0 1px white, 1px 0 white, 0 -1px white;
+        }
+        .tableWrap {
+            
+            min-height: 300px;
+            overflow: auto;
+
+            table {
+                width: 90%;
+                background-color: rgb(53, 50, 205);
+                // width: 90%;
+                margin: 0 auto;
+                // height: 60%;
+                background-color: $division-box;
+                border-collapse: collapse;
+
+                .tableHeader {
+                
+                    background-color: #046991;
+               
+                    th {
+                        color: #e4ad15;
+                        border: 1px 0 0 0 solid yellowgreen;
+                        border: 1px solid white;
+                        padding: 10px 0;
+                    }
+                }
+                .tableBody {
+                    border: 1px solid white;
+                    td {
+                        color: white;
+                        text-shadow: 0px 1px 0px #dfb428;
+                        text-align: center;
+                        border: 1px solid white;
+                        padding: 5px 0;
+                    }
+                }
+            }
+        }
+
+        .errorMessage {
+            margin: 70px 20px;
+            padding: 30px 0;
+            border: 3px solid rgb(149, 124, 11);
+            color: rgb(149, 124, 11);
+            text-shadow: 0px 1px 0px #dfb428;
+            font-size: 20px;
+            text-align: center
+        }
+        @include buttonsWrapper;
+
+        button:first-of-type {
+            margin: 25px 50px 10px 50px;
+        }
+        button:last-of-type {
+            margin: 0 50px 25px 50px;
+        }
+    }
+}

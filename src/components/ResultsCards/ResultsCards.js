@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { choosedCard } from '../actions/action'
+import { choosedResultsCards } from '../../actions/action'
+import styles from './resultsCards.module.scss'
 import React from 'react'
 
 
@@ -23,7 +24,7 @@ function ResultsCards(props) {
 
     function handleClick() {
         let allSpan = document.querySelectorAll('span')
-        console.log(props.formulaOrResult)
+        // console.log(props.formulaOrResult)
         props.setFormulaOrResult(props.cartText)
 
         if (props.formulaOrResult !== props.cartText) {
@@ -31,22 +32,23 @@ function ResultsCards(props) {
                 if (stateFirstReducer.choosedCardsId.length < 2) {
                     // console.log(typeof props.theCard)
                     // console.log(eval(props.theCard))
-                    dispatch(choosedCard(props.id, eval(props.theCard)))
-                    allSpan[props.id * 2].className = 'front';
-                    allSpan[(props.id * 2) + 1].className = 'back flip';
+                    dispatch(choosedResultsCards(props.id, props.theCard))
+                    allSpan[props.id * 2].className = `${styles.front} `;
+                    allSpan[(props.id * 2) + 1].className = `${styles.back} ${styles.flip}`;
+                    props.textMessage('')
                 }
             }
-        } else alert ('choose card from the other side')
+        } else props.textMessage('Choose card from the other side!' )
     }
 
-
+    // 'front flip'
 
 
     return (
-        <div className={props.className}>
-            <article className="memory-card" id={props.id} onClick={handleClick}>
-                <span className='front flip'> {props.theCard}</span>
-                <span className='back' >{props.cartText}</span>
+        <div className={styles.classResults}>
+            <article className={styles.memoryCard} id={props.id} onClick={handleClick}>
+                <span className={`${styles.front} ${styles.flip}`} > {props.theCard}</span>
+                <span className={styles.back}>{props.cartText}</span>
             </article>
 
         </div>

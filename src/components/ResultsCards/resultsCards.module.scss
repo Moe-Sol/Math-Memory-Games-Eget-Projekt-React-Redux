@@ -1,0 +1,55 @@
+.classResults {
+
+  background: #DB5461;
+  // background: #E3655B;
+
+
+
+
+
+  .memoryCard {
+    display: flex;
+    max-width: 110px;
+    max-height: 110px;
+    width: 10vw;
+    height: 10vw;
+    min-width: 50px;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 2px 2px 5px #000000;
+    position: relative;
+    transition: transform 0.8s;
+    margin: 0.5rem;
+    font-size:2vw;
+    font-weight:600;
+    
+  }
+  
+
+
+}
+
+.front,
+.back {
+  position: absolute;
+  backface-visibility: hidden;
+  /* padding: 10%; */
+  cursor: pointer;
+  transition: transform 0.8s;
+
+  /* background-color: bisque; */
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+
+.front {
+  color:#ffc402;
+
+}

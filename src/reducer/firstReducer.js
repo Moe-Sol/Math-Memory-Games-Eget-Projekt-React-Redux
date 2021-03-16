@@ -1,23 +1,47 @@
 
-import allCardsInTheGame from './cardsFactory';
-import {arrayForResults,arrayForMultiFactors} from './cardsFactory';
+// import allCardsInTheGame from './cardsFactory';
+// import { arrayForResults, arrayForMultiFactors } from './cardsFactory';
+
 
 
 // console.log(allCardsInTheGame)
 
 const initialState = {
-    allCards: allCardsInTheGame,
+    allCards: [],
     choosedCardsId: [],
     choosedCardsValue: [],
     allSameCards: [],
-    gameFinished: false
+    gameFinished: false,
+    MultiplicationNumber: '',
 };
 
 
 const firstReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'choosedCardsId':
-            // console.log(state.choosedCardsId)
+
+
+        case 'getAllCards':
+            return {
+                ...state,
+                allCards: action.data
+            }
+
+        case 'choosedFormulasCards':
+            let value = action.value;
+            let firstNumber, secondNumber, result;
+            firstNumber = `${value.charAt(0)}${value.charAt(1)}`
+            secondNumber = `${value.charAt(4)}${value.charAt(5)}${value.charAt(6)}`
+            result = firstNumber * secondNumber;
+            ;
+            return {
+                ...state,
+                choosedCardsId: [...state.choosedCardsId, action.id],
+                choosedCardsValue: [...state.choosedCardsValue, result],
+            }
+
+
+        case 'choosedResultsCards':
+
 
             return {
                 ...state,
@@ -56,6 +80,13 @@ const firstReducer = (state = initialState, action) => {
                 gameFinished: action.data
             }
 
+
+        case 'setMultiNumber':
+
+            return {
+                ...state,
+                MultiplicationNumber: action.number
+            }
 
 
         default:
