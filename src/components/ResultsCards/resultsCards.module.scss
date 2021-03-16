@@ -24,12 +24,16 @@
     position: relative;
     transition: transform 0.8s;
     margin: 0.5rem;
-    font-size:2vw;
-    font-weight:600;
+    font-size: 20px;
+    font-weight: 600;
     
   }
   
-
+  @media screen and (max-width: 400px) {
+    .memoryCard {
+      font-size: 16px;
+    }
+  }
 
 }
 

@@ -16,7 +16,7 @@
     top: 0;
     z-index: 302;
     .StorageDataContainer {
-        width: 50%;
+        width: 60%;
         background: $background-color;
         border: solid 1px black;
         color: #b68500;
@@ -96,4 +96,13 @@
             margin: 0 50px 25px 50px;
         }
     }
+
+
+
+    @media screen and (max-width: 768px) {
+        .StorageDataContainer {
+            width: 90%;
+            
+        }
+      }
 }
