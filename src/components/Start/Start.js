@@ -45,11 +45,6 @@ function Start() {
 
                 <main>
 
-                    {/* <div>
-                        <h1> Choose one! </h1>
-                    </div> */}
-
-
                     <section>
 
                         <div className={styles.plusSignContainer} onClick={plus}>

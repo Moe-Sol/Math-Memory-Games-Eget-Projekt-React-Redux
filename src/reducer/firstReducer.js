@@ -1,10 +1,5 @@
 
-// import allCardsInTheGame from './cardsFactory';
-// import { arrayForResults, arrayForMultiFactors } from './cardsFactory';
 
-
-
-// console.log(allCardsInTheGame)
 
 const initialState = {
     allCards: [],
@@ -41,8 +36,6 @@ const firstReducer = (state = initialState, action) => {
 
 
         case 'choosedResultsCards':
-
-
             return {
                 ...state,
                 choosedCardsId: [...state.choosedCardsId, action.id],
@@ -57,10 +50,6 @@ const firstReducer = (state = initialState, action) => {
             };
 
         case 'sameCards':
-
-            // if (state.allSameCards.indexOf(action.data) === -1) {
-            //     console.log(state.allSameCards)
-
             return {
                 ...state,
                 choosedCardsId: [],
@@ -68,12 +57,7 @@ const firstReducer = (state = initialState, action) => {
                 allSameCards: [...state.allSameCards, action.firstCardId, action.secondCardId]
             }
 
-        // }
-
-        // else { return state }
-
         case 'gameFinished':
-
             return {
                 ...state,
                 allSameCards: [],
@@ -82,7 +66,6 @@ const firstReducer = (state = initialState, action) => {
 
 
         case 'setMultiNumber':
-
             return {
                 ...state,
                 MultiplicationNumber: action.number

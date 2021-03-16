@@ -5,7 +5,6 @@ import ResultsCards from '../ResultsCards/ResultsCards';
 import GameFinished from '../GameFinished/GameFinished';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react';
 import { sameCards, gameFinished, differentCards } from '../../actions/action';
 import { useHistory } from 'react-router';
@@ -13,24 +12,20 @@ import infoIcon from '../../businessman.svg'
 import Info from '../Info/Info'
 
 function MemoryCards() {
-  // const {id} = useParams()
-  // console.log(id)
+
 
   const history = useHistory();
   const dispatch = useDispatch()
 
   const [formulaOrResult, setFormulaOrResult] = useState('')
-  // const [test, setTest] = useState('')
   const [toggleInfo, setToggleInfo] = useState('')
   const [textMessage, setTextMessage] = useState('')
 
   const stateFirstReducer = useSelector(state => {
-    // console.log(state)
     return state.firstReducer
   })
 
   const stateSecondReducer = useSelector(state => {
-    // console.log(state)
     return state.secondReducer
   })
 
@@ -42,7 +37,6 @@ function MemoryCards() {
     let secondClassFronttNum = (stateFirstReducer.choosedCardsId[1] * 2)
     let secondClassBacktNum = ((stateFirstReducer.choosedCardsId[1] * 2) + 1)
     let allSpan = document.querySelectorAll('span')
-    // console.log(allSpan)
     if (stateFirstReducer.choosedCardsValue[0] !== stateFirstReducer.choosedCardsValue[1] && stateFirstReducer.choosedCardsValue[1] !== undefined) {
       setTimeout(() => {
         allSpan[firstClassFrontNum].className = `${styles.front} ${styles.flip}`;

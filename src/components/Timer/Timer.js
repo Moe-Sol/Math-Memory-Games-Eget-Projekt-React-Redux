@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setTimer, removeAccess, gameFinished } from '../../actions/action'
+import { setTimer } from '../../actions/action'
 
 
 
@@ -14,11 +14,9 @@ function Timer() {
     const [timerMinutes, setTimerMinutes] = useState(0)
     const [timerHours, setTimerHours] = useState(0)
     const [gameTime, setGameTime] = useState('')
-    // const [stopTime, setStopTime] = useState(false)
     const [intervalId, setIntervalId] = useState('')
 
     const finishState = useSelector(state => state.firstReducer.gameFinished);
-    // console.log(finishState)
 
     function overTen(x) {
         return (x < 10) ? '0' + x.toString() : x.toString();
@@ -43,7 +41,6 @@ function Timer() {
         if (timerSeconds === 60) {
             setTimerSeconds(0)
             setTimerMinutes((timerM) => timerM + 1)
-            // setStopTime(true)
         }
 
         if (timerMinutes === 60) {
@@ -55,7 +52,6 @@ function Timer() {
 
         if (finishState) {
             let currentTime = new Date().toLocaleString('en-US', { hour12: true });
-            console.log(currentTime)
             clearInterval(intervalId)
             dispatch(setTimer(gameTime, currentTime))
 
@@ -68,15 +64,6 @@ function Timer() {
         }
 
     }, [timerSeconds]);
-
-
-
-    // useEffect(() => {
-    //     effect
-    //     return () => {
-    //         cleanup
-    //     }
-    // }, [input])
 
     return (
         <div>

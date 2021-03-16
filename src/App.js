@@ -6,7 +6,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import styles from './App.module.scss'
 
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 function App() {
 

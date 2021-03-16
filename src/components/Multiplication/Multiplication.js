@@ -14,7 +14,6 @@ import Info from '../Info/Info'
 function Multiplication(props) {
     const [toggleCardsFactory, setToggleCardsFactory] = useState('')
     const [toggleStorageData, setToggleStorageData] = useState('')
-    // const [oldDataLocalStorage, setOldDataLocalStorage] = useState('')
     const [toggleInfo, setToggleInfo] = useState('')
 
 
@@ -46,13 +45,7 @@ function Multiplication(props) {
         </div>))
 
     function previousResults() {
-        // let DataFromStorage = localStorage.getItem('Game Results');
-        // let oldData = JSON.parse(DataFromStorage)
-        // // console.log('data i local storge ', data)
-        // // console.log(data[data.length - 1])
-        // if (DataFromStorage) {
-        //     console.log(oldData)
-        //     setOldDataLocalStorage(oldData)
+
         setToggleStorageData(true)
     }
     function toggleInfoFun() {
@@ -72,14 +65,10 @@ function Multiplication(props) {
                     </header>
 
 
-
                     {toggleStorageData ? <StorageData toggle={setToggleStorageData} /> : ''}
 
                     {toggleInfo && !toggleStorageData ? <Info toggle={setToggleInfo} /> :
                         <main>
-                            {/* <div>
-                                <h1>Choose times table you want to play! </h1>
-                            </div> */}
                             <section className={styles.numbersContainer}>
                                 {number}
                             </section>

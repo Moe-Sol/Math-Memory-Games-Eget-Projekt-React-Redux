@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './info.module.scss'
 
 
@@ -21,10 +21,7 @@ function Info(props) {
 
                 <h2>( This project is still under development )</h2>
                 <h2>Developed by Mohammad Soliman</h2>
-                <a href="mailto:mohammad.soliman86@hotmail.com
-">mohammad.soliman86@hotmail.com</a>
-
-
+                <a href="mailto:mohammad.soliman86@hotmail.com">mohammad.soliman86@hotmail.com</a>
 
                 <button onClick={() => props.toggle(false)}> Go Back </button>
 

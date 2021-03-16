@@ -9,8 +9,7 @@ function StorageData(props) {
     useEffect(() => {
         let DataFromStorage = localStorage.getItem('Game Results');
         let oldData = JSON.parse(DataFromStorage)
-        // console.log('data i local storge ', data)
-        // console.log(data[data.length - 1])
+
         if (DataFromStorage) {
             console.log(oldData)
             setOldDataLocalStorage(oldData.reverse())
@@ -64,9 +63,6 @@ function StorageData(props) {
                         </table>
                     </div>
                     : <h2 className={styles.errorMessage}>You need to save some result first.</h2>}
-
-
-
 
                 <button onClick={handleClean}> Clean alla results </button>
                 <button onClick={() => props.toggle(false)}> Go Back </button>

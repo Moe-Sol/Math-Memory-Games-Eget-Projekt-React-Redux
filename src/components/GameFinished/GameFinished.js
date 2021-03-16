@@ -11,12 +11,10 @@ function GameFinished(props) {
     const [aktiv, setAktiv] = useState('')
 
     const stateSecondReducer = useSelector(state => {
-        // console.log(state)
         return state.secondReducer
     })
 
     const stateFirstReducer = useSelector(state => {
-        // console.log(state)
         return state.firstReducer
     })
     let history = useHistory()
@@ -32,9 +30,7 @@ function GameFinished(props) {
         }
 
         let DataFromStorage = localStorage.getItem('Game Results');
-        let oldData = JSON.parse(DataFromStorage)
-        console.log('data i local storge ', oldData)
-        // console.log(data[data.length - 1])
+        let oldData = JSON.parse(DataFromStorage);
         if (DataFromStorage) {
             if (oldData[oldData.length - 1].currentTime !== result.currentTime) {
                 localStorage.setItem('Game Results', JSON.stringify([...oldData, result]));

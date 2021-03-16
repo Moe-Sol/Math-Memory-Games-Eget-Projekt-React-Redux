@@ -13,21 +13,13 @@ function FormulasCards(props) {
     })
 
 
-
-
-
-
     function handleClick() {
-        let allSpan = document.querySelectorAll('span')
-        // console.log(props.formulaOrResult)
-        props.setFormulaOrResult(props.cartText)
+        let allSpan = document.querySelectorAll('span');
+        props.setFormulaOrResult(props.cartText);
 
         if (props.formulaOrResult !== props.cartText) {
             if (stateFirstReducer.choosedCardsId.indexOf(props.id) === -1) {
                 if (stateFirstReducer.choosedCardsId.length < 2) {
-                    // console.log(typeof props.theCard)
-                    // console.log(eval(props.theCard))
-                    console.log('the formula card',props.theCard)
                     dispatch(choosedFormulasCards(props.id, props.theCard))
                     allSpan[props.id * 2].className = `${styles.front} `;
                     allSpan[(props.id * 2) + 1].className =  `${styles.back} ${styles.flip}`;
@@ -37,10 +29,6 @@ function FormulasCards(props) {
             }
         } else props.textMessage('Choose card from the other side!')
 
-            // setTimeout(() => {
-            //     return 'test'
-            // }, 50)
-       
     }
 
 
