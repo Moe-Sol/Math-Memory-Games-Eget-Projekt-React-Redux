@@ -2,13 +2,11 @@
 
 .container {
     width: 100%;
-  height:100%;
+    height: 100%;
+    min-height:100vh;
 
-    // background-color: aquamarine;
-    // padding: 4.8rem 1rem 1rem 1rem;
     position: absolute;
     background: rgba(10, 9, 26, 0.7);
-    // top: 0;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -16,11 +14,27 @@
     color: black;
     top: 0;
     z-index: 5;
+
+
+    @media screen and (max-height:650px) {
+       height: 110%;
+}       
+
+    
     .StorageDataContainer {
+        @media screen and (max-width: 768px) {
+            width: 90%;
+            
+        }
+
+        @media screen and (max-height: 568px) {
+            height: 105%;
+            
+        }
+
 
         width: 60%;
         height:90%;
-overflow: auto;
         background: $background-color;
         border: solid 1px black;
         color: #b68500;
@@ -31,6 +45,8 @@ overflow: auto;
         // border-radius: 10px;
 
         div {
+            margin-top: 0px;
+
             display: flex;
             // background-color: whitesmoke;
             justify-content: flex-end;
@@ -99,14 +115,14 @@ overflow: auto;
         button:last-of-type {
             margin: 0 50px 25px 50px;
         }
+
+
+       
+
     }
 
 
 
-    @media screen and (max-width: 768px) {
-        .StorageDataContainer {
-            width: 90%;
-            
-        }
-      }
+
+    
 }

@@ -10,7 +10,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 const store = createStore(allReducers/* ,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() */
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()  */
 );
 
 // let i = 0;

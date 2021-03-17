@@ -38,17 +38,22 @@ function MemoryCards() {
     let secondClassBacktNum = ((stateFirstReducer.choosedCardsId[1] * 2) + 1)
     let allSpan = document.querySelectorAll('span')
     if (stateFirstReducer.choosedCardsValue[0] !== stateFirstReducer.choosedCardsValue[1] && stateFirstReducer.choosedCardsValue[1] !== undefined) {
+      console.log('differentCards '+stateFirstReducer.choosedCardsValue[0] )
+      console.log('differentCards '+stateFirstReducer.choosedCardsValue[1] )
+      console.log('differentCards '+ typeof(stateFirstReducer.choosedCardsValue[1] ))
+      dispatch(differentCards())
+      setFormulaOrResult('')
+    
       setTimeout(() => {
         allSpan[firstClassFrontNum].className = `${styles.front} ${styles.flip}`;
         allSpan[firstClassBacktNum].className = `${styles.back}`;
         allSpan[secondClassFronttNum].className = `${styles.front} ${styles.flip}`;
         allSpan[secondClassBacktNum].className =
           `${styles.back}`;
-        dispatch(differentCards())
-        setFormulaOrResult('')
-        setTextMessage('Try again!')
+          setTextMessage('Try again!')
 
-      }, 1000);
+    
+      },1000);
     }
     else if (stateFirstReducer.choosedCardsValue[0] == stateFirstReducer.choosedCardsValue[1] && stateFirstReducer.choosedCardsValue[1] !== undefined) {
       let firstCardId = allSpan[firstClassFrontNum].parentElement;
