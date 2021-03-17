@@ -2,21 +2,24 @@
 
 .container {
     width: 100%;
-    height: 90%;
+    height: 100%;
     // background-color: aquamarine;
     z-index: 30;
     // padding: 4.8rem 1rem 1rem 1rem;
     position: absolute;
-    // background: rgba(10, 9, 26, 0.7);
+    top: 0;
+
+    background: rgba(10, 9, 26, 0.7);
     // top: 0;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     color: black;
-    margin-top: -100px;
 
     .StorageDataContainer {
+        position: absolute;
+
         width: 70%;
         background: $background-color;
         border: solid 1px black;
@@ -31,7 +34,8 @@
             // background-color: whitesmoke;
             justify-content: flex-end;
             svg {
-                width: 40px;
+                width: 60px;
+                
             }
         }
 
@@ -39,13 +43,13 @@
             text-align: center;
             margin-bottom: 20px;
             text-shadow: -1px 0 rgb(167, 160, 160), 0 1px white, 1px 0 white, 0 -1px white;
-            color: #db5461;
+            color: #b68500;
             font-size: 24px;
         }
 
         h2:last-of-type {
             font-size: 24px;
-            color: #db5461;
+            color: #b68500;
             text-align: center;
             margin-bottom: 20px;
             text-shadow: -1px 0 rgb(167, 160, 160), 0 1px white, 1px 0 white, 0 -1px white;
@@ -53,7 +57,7 @@
 
         a {
             text-align: center;
-            color: #db5461;
+            color: #b68500;
             font-weight: 600;
             font-size: 20px;
             white-space: pre-wrap; /* CSS3 */    

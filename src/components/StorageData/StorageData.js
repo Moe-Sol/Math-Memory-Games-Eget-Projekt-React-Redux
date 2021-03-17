@@ -11,8 +11,7 @@ function StorageData(props) {
         let oldData = JSON.parse(DataFromStorage)
 
         if (DataFromStorage) {
-            console.log(oldData)
-            setOldDataLocalStorage(oldData.reverse())
+            setOldDataLocalStorage(oldData.reverse());
         }
     }, [])
 
