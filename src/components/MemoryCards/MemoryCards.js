@@ -38,9 +38,7 @@ function MemoryCards() {
     let secondClassBacktNum = ((stateFirstReducer.choosedCardsId[1] * 2) + 1)
     let allSpan = document.querySelectorAll('span')
     if (stateFirstReducer.choosedCardsValue[0] !== stateFirstReducer.choosedCardsValue[1] && stateFirstReducer.choosedCardsValue[1] !== undefined) {
-      console.log('differentCards '+stateFirstReducer.choosedCardsValue[0] )
-      console.log('differentCards '+stateFirstReducer.choosedCardsValue[1] )
-      console.log('differentCards '+ typeof(stateFirstReducer.choosedCardsValue[1] ))
+   
       dispatch(differentCards())
       setFormulaOrResult('')
     
