@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { choosedResultsCards } from '../../actions/action'
 import styles from './resultsCards.module.scss'
 import React from 'react'
+import audioClick from '../../sounds/click1.mp3'
 
 
 function ResultsCards(props) {
@@ -19,14 +20,15 @@ function ResultsCards(props) {
         if (props.formulaOrResult !== props.cartText) {
             if (stateFirstReducer.choosedCardsId.indexOf(props.id) === -1) {
                 if (stateFirstReducer.choosedCardsId.length < 2) {
-      
+                    let audio = new Audio(audioClick)
+                    audio.play();
                     dispatch(choosedResultsCards(props.id, props.theCard))
                     allSpan[props.id * 2].className = `${styles.front} `;
                     allSpan[(props.id * 2) + 1].className = `${styles.back} ${styles.flip}`;
                     props.textMessage('')
                 }
             }
-        } else props.textMessage('Choose card from the other side!' )
+        } else props.textMessage('Choose card from the other side!')
     }
 
 

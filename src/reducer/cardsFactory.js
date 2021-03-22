@@ -66,7 +66,7 @@ function CardsFactory() {
 
     let arrayForFormulas = bildArrayForFormulas();
 
-      shuffle(arrayForFormulas)
+    //   shuffle(arrayForFormulas)
 
     let allCardsInTheGame = arrayForResults.concat(arrayForFormulas);
 

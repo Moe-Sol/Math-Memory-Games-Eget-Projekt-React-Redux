@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './storageData.module.scss'
-
-
+import audioClick from '../../sounds/click1.mp3'
+import audioAccept from '../../sounds/Accept.mp3'
 function StorageData(props) {
 
     const [oldDataLocalStorage, setOldDataLocalStorage] = useState('')
@@ -19,6 +19,8 @@ function StorageData(props) {
     function handleClean() {
         localStorage.removeItem('Game Results');
         setOldDataLocalStorage('')
+        let audio = new Audio(audioAccept)
+        audio.play();
 
     }
 
@@ -28,7 +30,11 @@ function StorageData(props) {
 
             <div className={styles.StorageDataContainer}>
                 <div>
-                    <svg onClick={() => props.toggle(false)} viewBox="0 0 34 34" fill="none">
+                    <svg onClick={() => {
+                        let audio = new Audio(audioClick);
+                        audio.play();
+                        props.toggle(false);
+                    }} viewBox="0 0 34 34" fill="none">
                         <path d="M20.5355 20.5355L13.4645 13.4645" stroke="rgb(80, 68, 4)" strokeLinecap="round" />
                         <path d="M13.4645 20.5355L20.5355 13.4645" stroke="rgb(80, 68, 4)" strokeLinecap="round" />
                         <path fillRule="evenodd" clipRule="evenodd" d="M9.92893 24.0711C13.8342 27.9763 20.1658 27.9763 24.0711 24.0711C27.9763 20.1658 27.9763 13.8342 24.0711 9.92893C20.1658 6.02369 13.8342 6.02369 9.92893 9.92893C6.02369 13.8342 6.02369 20.1658 9.92893 24.0711Z" stroke="rgb(80, 68, 4)" />
@@ -50,21 +56,25 @@ function StorageData(props) {
                                 </tr>
                             </thead>
                             <tbody>
-                            {oldDataLocalStorage.map((data, index) => (
-                                
-                                <tr key={index} className={styles.tableBody}>
-                                    <td> {data.timesTable} </td>
-                                    <td> {data.gameTime} </td>
-                                    <td> {data.currentTime} </td>
-                                </tr>
-                            ))}
-                             </tbody>
+                                {oldDataLocalStorage.map((data, index) => (
+
+                                    <tr key={index} className={styles.tableBody}>
+                                        <td> {data.timesTable} </td>
+                                        <td> {data.gameTime} </td>
+                                        <td> {data.currentTime} </td>
+                                    </tr>
+                                ))}
+                            </tbody>
                         </table>
                     </div>
                     : <h2 className={styles.errorMessage}>You need to save some result first.</h2>}
 
                 <button onClick={handleClean}> Clean alla results </button>
-                <button onClick={() => props.toggle(false)}> Go Back </button>
+                <button onClick={() => {
+                    let audio = new Audio(audioClick);
+                    audio.play();
+                    props.toggle(false);
+                }}> Go Back </button>
 
             </div>
         </div>

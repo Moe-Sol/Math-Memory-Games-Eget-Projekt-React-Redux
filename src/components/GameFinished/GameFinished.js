@@ -6,6 +6,10 @@ import { removeAccess, gameFinished } from '../../actions/action'
 import CardsFactory from '../../reducer/cardsFactory'
 import infoIcon from '../../businessman.svg'
 import Info from '../Info/Info'
+import audioClick from '../../sounds/click1.mp3'
+import audioAccept from '../../sounds/Accept.mp3'
+import audioWrong from '../../sounds/wrong2.mp3'
+
 
 function GameFinished(props) {
     const [aktiv, setAktiv] = useState('')
@@ -34,15 +38,23 @@ function GameFinished(props) {
         if (DataFromStorage) {
             if (oldData[oldData.length - 1].currentTime !== result.currentTime) {
                 localStorage.setItem('Game Results', JSON.stringify([...oldData, result]));
+                let audio = new Audio(audioAccept)
+                audio.play();
                 alert(' Your result is saved now')
+         
             }
-            else alert(' Your result is already saved!')
+            else {
+                let audio = new Audio(audioWrong);
+                audio.play();
+                alert(' Your result is already saved!')}
         } else localStorage.setItem('Game Results', JSON.stringify([result]));
 
     }
 
 
     function goToStart() {
+        let audio = new Audio(audioAccept)
+        audio.play();
         history.push('/start');
         dispatch(removeAccess());
         dispatch(gameFinished(false));
@@ -50,6 +62,8 @@ function GameFinished(props) {
     }
 
     function tryAgain() {
+        let audio = new Audio(audioAccept)
+        audio.play();
         setAktiv(true);
         dispatch(removeAccess());
         dispatch(gameFinished(false));
@@ -57,6 +71,8 @@ function GameFinished(props) {
     }
 
     function toggleInfoFun() {
+        let audio = new Audio(audioClick)
+        audio.play();
         setToggleInfo(true)
         props.textMessage('')
     }

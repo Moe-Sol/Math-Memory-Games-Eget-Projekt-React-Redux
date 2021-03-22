@@ -60,6 +60,8 @@ const firstReducer = (state = initialState, action) => {
         case 'gameFinished':
             return {
                 ...state,
+                choosedCardsId: [],
+                choosedCardsValue: [],
                 allSameCards: [],
                 gameFinished: action.data
             }

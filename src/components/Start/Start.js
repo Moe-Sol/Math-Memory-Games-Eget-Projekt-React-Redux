@@ -3,10 +3,12 @@ import { useHistory } from 'react-router';
 import styles from './start.module.scss'
 import infoIcon from '../../businessman.svg'
 import Info from '../Info/Info'
-
+import audioClick from '../../sounds/click1.mp3'
 function Start() {
     const history = useHistory()
     const [toggleInfo, setToggleInfo] = useState('')
+    const [audio] = useState(new Audio(audioClick));
+
 
 
     function plus() {
@@ -17,8 +19,8 @@ function Start() {
     }
 
     function multiplication() {
-        history.push('/multiplication')
-
+       audio.play();
+       history.push('/multiplication')
 
     }
 
@@ -27,6 +29,7 @@ function Start() {
 
 
     function toggleInfoFun() {
+        audio.play();
         setToggleInfo(true)
     }
 
