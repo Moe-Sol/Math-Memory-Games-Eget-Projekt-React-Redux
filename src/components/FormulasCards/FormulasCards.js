@@ -12,24 +12,31 @@ function FormulasCards(props) {
     })
 
 
-    function handleClick() {
+    async function handleClick() {
         let allSpan = document.querySelectorAll('span');
-        props.setFormulaOrResult(props.cartText);
 
-        if (props.formulaOrResult !== props.cartText) {
-            if (stateFirstReducer.choosedCardsId.indexOf(props.id) === -1) {
-                if (stateFirstReducer.choosedCardsId.length < 2) {
+        if (props.formulaOrResult == props.cartText) {
+            props.textMessage('Choose card from the other side!')
+        }
 
-                    let audio = new Audio(audioClick)
-                    audio.play();
-                    dispatch(choosedFormulasCards(props.id, props.theCard))
+        if (stateFirstReducer.choosedCardsId.indexOf(props.id) === -1) {
+            if (stateFirstReducer.choosedCardsId.length < 2) {
+                props.setFormulaOrResult(props.cartText);
+
+                if (props.formulaOrResult !== props.cartText) {
                     allSpan[props.id * 2].className = `${styles.front} `;
-                    allSpan[(props.id * 2) + 1].className = `${styles.back} ${styles.flip}`;
-                    props.textMessage('')
 
-                }
+                    allSpan[(props.id * 2) + 1].className = `${styles.back} ${styles.flip}`;
+                    dispatch(choosedFormulasCards(props.id, props.theCard))
+
+                    props.textMessage('')
+                    let audio = new Audio(audioClick)
+
+                    audio.play();
+
+                } else props.textMessage('Choose card from the other side!')
             }
-        } else props.textMessage('Choose card from the other side!')
+        }
 
     }
 

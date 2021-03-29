@@ -44,18 +44,20 @@ function MemoryCards() {
     let allSpan = document.querySelectorAll('span')
     if (stateFirstReducer.choosedCardsValue[0] !== stateFirstReducer.choosedCardsValue[1] && stateFirstReducer.choosedCardsValue[1] !== undefined) {
 
-  
-      dispatch(differentCards())
+
+
       setFormulaOrResult('')
 
       setTimeout(() => {
-        let audio = new Audio(audioFlip)
-        audio.play();
+        dispatch(differentCards())
+
         allSpan[firstClassFrontNum].className = `${styles.front} ${styles.flip}`;
         allSpan[firstClassBacktNum].className = `${styles.back}`;
         allSpan[secondClassFronttNum].className = `${styles.front} ${styles.flip}`;
         allSpan[secondClassBacktNum].className =
           `${styles.back}`;
+        let audio = new Audio(audioFlip)
+        audio.play();
         setTextMessage('Try again!')
 
 
@@ -70,11 +72,10 @@ function MemoryCards() {
 
       allSpan[firstClassFrontNum].style.color = '#8ffd00';
       allSpan[secondClassFronttNum].style.color = '#8ffd00';
-
-      let audio = new Audio(audioRight)
-      audio.play();
       setFormulaOrResult('')
       dispatch(sameCards(firstCardId.id, secondCardId.id))
+      let audio = new Audio(audioRight)
+      audio.play();
       setTextMessage('Yes! It is right')
     }
 
