@@ -32,14 +32,14 @@ function CardsFactory() {
 
 
     let multiplicationFactor = MultiplicationNumber;
-    let numberOfSimilarPairs = 12
+    let numberOfSimilarPairs = 8
 
 
     // ---------------------------------------------------------------
     let bildArrayForResults = (numberOfCards) => {
         let arrayForResults = [];
         while (arrayForResults.length < numberOfCards) {
-            let randomNum = Math.ceil(Math.random() * numberOfSimilarPairs);
+            let randomNum = Math.ceil(Math.random() * 12);
     
             let product = eval(`${multiplicationFactor}${operator} ${randomNum}`)
 

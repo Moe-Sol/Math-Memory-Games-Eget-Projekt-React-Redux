@@ -23,15 +23,13 @@ function Timer() {
     }
 
 
-
-    function FunTest() {
+    function startTimer() {
         setTimerSeconds((timerS) => timerS + 1)
 
     }
 
-
     useEffect(() => {
-        let intervalId = setInterval(FunTest, 1000);
+        let intervalId = setInterval(startTimer, 1000);
         setIntervalId(intervalId)
 
     }, []);

@@ -19,7 +19,6 @@ function Start() {
     }
 
     function multiplication() {
-       audio.play();
        history.push('/multiplication')
 
     }

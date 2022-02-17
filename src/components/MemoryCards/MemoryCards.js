@@ -83,7 +83,8 @@ function MemoryCards() {
 
 
   useEffect(() => {
-    if ((stateFirstReducer.allSameCards.length === stateFirstReducer.allCards.length) && (stateFirstReducer.allCards.length !== 0)) {
+    if ((stateFirstReducer.allSameCards.length === stateFirstReducer.allCards.length) && 
+    (stateFirstReducer.allCards.length !== 0)) {
       let audio = new Audio(audioWin)
       audio.play();
       dispatch(gameFinished(true))
@@ -118,32 +119,26 @@ function MemoryCards() {
 
           <main>
             <h3 className={styles.textMessage}> {textMessage} </h3>
-
-
-
-
             <div className={styles.memoryCardsContainer}>
               <section className={styles.memoryCards}>
                 {stateFirstReducer.allCards.map((card, index) => {
-                  if (index < 12) {
+                  if (index < 8) {
                     return (
                       <FormulasCards theCard={card} key={index} id={index} cartText={formularCartText}
                         setFormulaOrResult={setFormulaOrResult} formulaOrResult={formulaOrResult} textMessage={setTextMessage} />
                     )
                   }
                 })}
-
               </section>
               <section className={styles.memoryCards}>
                 {stateFirstReducer.allCards.map((card, index) => {
-                  if (index > 11) {
+                  if (index > 7) {
                     return (
                       <ResultsCards theCard={card} key={index} id={index} cartText='=' setFormulaOrResult={setFormulaOrResult} formulaOrResult={formulaOrResult} textMessage={setTextMessage} />
 
                     )
                   }
                 })}
-
               </section>
 
 

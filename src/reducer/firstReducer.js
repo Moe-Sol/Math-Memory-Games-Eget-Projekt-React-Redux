@@ -26,6 +26,8 @@ const firstReducer = (state = initialState, action) => {
             let firstNumber, secondNumber, result;
             firstNumber = `${value.charAt(0)}${value.charAt(1)}`
             secondNumber = `${value.charAt(4)}${value.charAt(5)}${value.charAt(6)}`
+         
+  
             result = firstNumber * secondNumber;
             ;
             return {
