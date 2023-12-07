@@ -1,7 +1,6 @@
 
 
 
-#Live : https://math-memory-games.herokuapp.com/
 
 English:
 ------------
