@@ -1,0 +1,44 @@
+@import "../variables.scss";
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: $background-color;
+
+    header {
+        @include header;
+    }
+
+    main {
+        width: 100%;
+        padding-top: 100px;
+        color: white;
+
+        div:first-of-type {
+            @include guid-text;
+            flex-direction: column;
+       
+            h1 {
+                margin: 0 auto;
+                padding: 10px;
+                text-align: center;
+                background-color: #4c5b5c;
+                border-radius: 0;
+                max-width: 600px;
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 10px;
+                border-radius: 5px
+
+            }
+        }
+        .buttonWrapper {
+            @include buttonsWrapper;
+            button {
+                max-width: 600px;
+                margin: 10px auto;
+            }
+            margin-top: 50px;
+        }
+    }
+}

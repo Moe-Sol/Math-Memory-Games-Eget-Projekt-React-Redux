@@ -1,0 +1,55 @@
+.classFormulas {
+  background: #3891A6;
+}
+
+.memoryCard {
+  display: flex;
+
+  max-width: 110px;
+  max-height: 110px;
+  width: 10vw;
+  height: 10vw;
+  min-width: 50px;
+  min-height: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 2px 2px 5px #000000;
+  position: relative;
+  transition: transform 0.8s;
+  margin: 0.5rem; /*  */
+  font-size: 20px;
+  font-weight: 600;
+  
+}
+
+@media screen and (max-width: 415px) {
+  .memoryCard {
+    font-size: 14px;
+  }
+}
+
+.front,
+.back {
+  position: absolute;
+  backface-visibility: hidden;
+  /* padding: 10%; */
+  cursor: pointer;
+  transition: transform 0.8s;
+  /* background-color: bisque; */
+
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.front {
+  color:#ffc402;
+  
+
+}
+
+.back {
+}
