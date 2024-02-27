@@ -1,9 +1,12 @@
 @import "../variables.scss";
 
+
+
 .startContainer {
     // background-color: rgb(21, 22, 22);
     width: 100%;
-    min-height:100vh;
+    height: 100vh;
+
     background-color: $background-color;
 
     header {
@@ -11,28 +14,241 @@
     }
 
     main {
-        padding-top: 100px;
-        padding-bottom: 50px;
+        // padding-top: 100px;
+        // padding-bottom: 50px;
+
+        height: 100%;
 
         section {
             color: white;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
+
+
+
+            height: 100Vh;
+            max-height: 100Vh;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            grid-template-rows: 40% 2fr 3fr;
+
+
+
+
+
+
+            .rowOne {
+                //   background-color: rgba(222, 3, 3, 0.881);
+                grid-column-start: 1;
+                grid-column-end: 4;
+
+                // grid-template-rows: 1fr 1fr;
+                z-index: 30;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .colud1 {
+
+
+                    background-image: url("../../img/m1.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    // background-color: black;
+                    // position: absolute;
+                    min-width: 100px;
+                    min-height: 50px;
+                    align-self: flex-start;
+
+                }
+
+
+                .colud2 {
+                    //    background-color: rgba(188, 188, 39, 0.416);
+                    background-image: url("../../img/m2.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    min-width: 100px;
+                    min-height: 50px;
+
+
+
+                }
+
+
+
+                .colud3 {
+
+                    background-image: url("../../img/m3.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    //   background-color: blue; 
+                    min-width: 100px;
+                    min-height: 50px;
+                    align-self: flex-end;
+                    margin-bottom: 30px;
+
+                }
+
+
+                .colud4 {
+
+                    // background-image: url("../../img/m4.svg");
+                    // background-repeat: no-repeat;
+                    // background-size: cover;
+                    // min-width: 100px;
+                    // min-height: 50px;
+                    // // background-color: blue;
+
+                }
+
+                .colud5 {
+
+                    background-image: url("../../img/m5.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    min-width: 100px;
+                    min-height: 50px;
+                    // background-color: rgb(181, 10, 67);
+
+                }
+            }
+
+            .rowTwo {
+
+                //  background-color: rgb(207, 77, 25);
+                grid-column-start: 1;
+                grid-column-end: 4;
+
+                // grid-template-rows: 1fr 1fr;
+
+
+
+
+
+                .gamesName {
+
+                    background-image: url("../../img/mathgame.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    // background-color: black;
+
+                    min-width: 150px;
+                    min-height: 69px;
+
+                }
+
+
+                // .colud6 {
+
+                //     background-image: url("../../img/m5.svg");
+                //     background-repeat: no-repeat;
+                //     background-size: cover;
+
+                //     // background-color: rgb(24, 200, 15);
+                //     min-width: 100px;
+                //     min-height: 50px;
+                //     flex: 2
+                // }
+            }
+
+
+            .rowThree {
+            // background-color: rgba(70, 9, 9, 0.881);
+                grid-column-start: 1;
+                grid-column-end: 4;
+
+                // grid-template-rows: 1fr 1fr;
+
+                display: flex;
+                flex-direction: column;
+
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .colud1 {
+
+
+                    background-image: url("../../img/m1.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    //    background-color: black;
+                    // position: absolute;
+                    min-width: 100px;
+                    min-height: 50px;
+
+                }
+
+
+                .colud2 {
+                    // background-color: rgba(188, 188, 39, 0.416);
+                    background-image: url("../../img/m2.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    min-width: 100px;
+                    min-height: 50px;
+                }
+
+
+
+                .colud3 {
+
+                    background-image: url("../../img/m3.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    //   background-color: blue; 
+                    min-width: 100px;
+                    min-height: 50px;
+
+                }
+
+
+                .colud4 {
+
+                    // background-image: url("../../img/m4.svg");
+                    // background-repeat: no-repeat;
+                    // background-size: cover;
+                    // min-width: 100px;
+                    // min-height: 50px;
+                    // // background-color: blue;
+
+                }
+
+                .colud5 {
+
+                    background-image: url("../../img/m5.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    min-width: 100px;
+                    min-height: 50px;
+                    // background-color: rgb(181, 10, 67);
+
+
+                }
+            }
+
 
             .plusSignContainer:hover::before {
                 color: $plus-box;
                 font-size: 24px;
                 text-shadow: $text-shadow;
             }
+
             .plusSignContainer::before {
                 @include start-box-before;
             }
+
             .plusSignContainer {
                 @include start-box;
                 background-color: $plus-box;
                 justify-self: right;
-             
+
             }
 
             .minusSignContainer:hover::before {
@@ -44,6 +260,7 @@
             .minusSignContainer::before {
                 @include start-box-before;
             }
+
             .minusSignContainer {
                 @include start-box;
                 background-color: $minus-box;
@@ -65,14 +282,44 @@
             .divisionSignContainer::before {
                 @include start-box-before;
             }
+
             .divisionSignContainer {
                 @include start-box;
                 background-color: #48887a;
                 justify-self: left;
             }
 
-            margin-bottom: 50px;
+            .colud1212 {
+
+                //  background-image: url(require('/'));
+                background-image: url("../../img/m1.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 300px;
+                width: 900px;
+                //  background-color: red;
+            }
+
+            .colud555 {
+
+                //  background-image: url(require('/'));
+                background-image: url("../../img/m1.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 300px;
+                width: 900px;
+                // background-color: rgb(198, 137, 137);
+            }
+
+
+
+
+
+
+
+
         }
+
         div {
             @include guid-text;
         }

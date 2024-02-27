@@ -1,6 +1,6 @@
 // color
 
-$background-color: #fad796;
+$background-color: #4bcaf9;
 $header-color: #f6aa1c;
 $division-box: #48887a;
 $multiplication-box: #f5876c;
@@ -13,6 +13,7 @@ $textMessage: rgb(255, 80, 49);
 // background: #FDE74C;
 // background: #4C5B5C;
 // background: #3891A6;
+
 
 
 $text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
@@ -98,7 +99,7 @@ $text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
             display: flex;
             filter: invert(14%) sepia(14%) saturate(3039%) hue-rotate(4deg) brightness(96%) contrast(95%);
             cursor: pointer;
-            margin-top: 10px;
+           margin-top: 10px;
             margin-right: 5px;
 
         }
