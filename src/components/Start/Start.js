@@ -162,7 +162,7 @@ function Start() {
               ></motion.div>
             </div>
 
-            <div className={styles.rowThree}>
+       <div className={styles.rowThree}>
               <motion.div
                 style={{ width: width / 6, height: width / 13 }}
                 initial={{ opacity: 1, scale: 1, x: 0 - width / 6 }}
@@ -211,7 +211,7 @@ function Start() {
                   //  ease: [0, 0.71, 0.2, 1.01]
                 }}
               ></motion.div>
-            </div>
+            </div> 
 
             {/* <div className={styles.one}>
 							<motion.div
