@@ -1,4 +1,4 @@
-
+*This is a hobby project that I work on in my spare time but it still needs a lot of work
 
 Live : https://math-memory-games.web.app/
 
