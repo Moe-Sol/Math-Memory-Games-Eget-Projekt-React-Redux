@@ -22,10 +22,9 @@
 
         width: 70%;
         background: $background-color;
-        border: solid 1px black;
         color: #b68500;
         font-size: 20px;
-        border: 3px solid black;
+        border: 3px solid rgb(184, 207, 93);
 
         // border-radius: 10px;
 
@@ -43,22 +42,25 @@
             text-align: center;
             
             margin-bottom: 20px;
-            text-shadow: -1px 0 rgb(167, 160, 160), 0 1px white, 1px 0 white, 0 -1px white;
-            color: #b68500;
+            text-shadow: 2px 2px 2px #01090b;
+            color:$header-color;
+
             font-size: 24px;
         }
 
         h2:last-of-type {
             font-size: 24px;
-            color: #b68500;
+            color: $header-color;
+
             text-align: center;
             margin-bottom: 20px;
-            text-shadow: -1px 0 rgb(167, 160, 160), 0 1px white, 1px 0 white, 0 -1px white;
+            text-shadow: 2px 2px 2px #01090b;
         }
 
         a {
             text-align: center;
-            color: #b68500;
+            color: $header-color;
+
             font-weight: 600;
             font-size: 20px;
             white-space: pre-wrap; /* CSS3 */    
@@ -66,7 +68,7 @@
             white-space: -pre-wrap; /* Opera 4-6 */    
             white-space: -o-pre-wrap; /* Opera 7 */    
             word-wrap: break-word; /* Internet Explorer 5.5+ */
-            text-shadow: -1px 0 rgb(167, 160, 160), 0 1px white, 1px 0 white, 0 -1px white;
+            text-shadow: 2px 2px 2px #01090b;
         }
 
         @include buttonsWrapper;
